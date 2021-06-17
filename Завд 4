@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+struct Worker {
+    char name[100];
+    char post[100];
+    double salary;
+    int year;
+} work[100];
+
+void SearchName(Worker* w, int workers, int exp)
+{
+    int count = 0;
+    cout << "\n\n";
+    for (int i = 0; i < workers; i++) {
+        if (2021 - w[i].year > exp) {
+            cout << "Name: " << w[i].name << ", exp: " << 2021 - w[i].year << endl;
+            count++;
+        }
+    }
+    if (count == 0) {
+        cout << "\n\nNo workers!" << endl;
+    }
+}
+
+int main()
+{
+    cout << "Enter the number of workers: ";
+    int workers, exp; cin >> workers;
+    cout << "Enter work experience: ";
+    cin >> exp;
+
+    for (int i = 0; i < workers; i++) {
+        cout << "Enter name: ";
+        cin >> work[i].name;
+        cout << "Enter post: ";
+        cin >> work[i].post;
+        cout << "Enter salary: ";
+        cin >> work[i].salary;
+        cout << "Enter year: ";
+        cin >> work[i].year;
+    }
+
+    SearchName(work, workers, exp);
+
+    system("pause");
+    return 0;
+}
