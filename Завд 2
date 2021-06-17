@@ -1,0 +1,64 @@
+#include <iostream>
+#include <clocale>
+
+using namespace std;
+
+struct Worker
+{
+    char name[60];
+    char fam[60];
+    char sname[60];
+    char pos[60];
+    int year;
+
+    void vvod()
+    {
+        cout << "Введите данные о 10ти работниках:" << endl;
+
+        for (int i = 1; i <= 10; i++)
+        {
+            cout << endl << "Заполняйте данные о " << i << "м работнике: " << endl << endl;
+            cout << endl << "Введите Имя: ";
+            cin >> name;
+            cout << endl << "Введите Фамилию: ";
+            cin >> fam;
+            cout << endl << "Введите Отчество: ";
+            cin >> sname;
+            cout << endl << "Введите должность: ";
+            cin >> pos;
+            cout << endl << "Введите год пост.на работу: ";
+            cin >> year;
+        }
+    }
+
+    void vivod()
+    {
+
+        int Ryear = 2010;
+        int stage = 0;
+        int ras = 0;
+        cout << endl << "Введите стаж: ";
+        cin >> stage;
+        for (int i = 1; i <= 10; i++, ras = 0)
+        {
+            ras = Ryear - year;
+            if (stage > ras)
+                cout << "Имя: " << name << endl;
+            cout << "Фамилия: " << fam << endl;
+            cout << "Отчество: " << sname << endl;
+            cout << "Должность: " << pos << endl;
+            cout << "Год пост.на работу: " << year << endl;
+        }
+    }
+};
+
+int main()
+{
+    setlocale(LC_ALL, "rus");
+
+    Worker x;
+
+    x.vvod();
+    x.vivod();
+
+} 
